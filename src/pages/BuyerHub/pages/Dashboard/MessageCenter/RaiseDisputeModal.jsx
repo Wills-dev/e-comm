@@ -75,7 +75,7 @@ export const RaiseDisputeModal = () => {
     <div
       className="modal fade place-order-modal"
       id="disputeModal"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
@@ -97,8 +97,8 @@ export const RaiseDisputeModal = () => {
             <div className="row">
               <div className="col-lg-12">
                 <form className="w-100" onSubmit={handleSubmit}>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1">Dispute Type</label>
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1">Dispute Type</label>
                     <select
                       className="form-select"
                       aria-label="Default select example"
@@ -106,17 +106,19 @@ export const RaiseDisputeModal = () => {
                       value={createDispute.subject}
                       onChange={handleChange}
                     >
-                      <option selected>Select Dispute Type</option>
+                      <option defaultValue="selected">
+                        Select Dispute Type
+                      </option>
                       <option value="1">Cashew</option>
                       <option value="2">Cocoa</option>
                       <option value="3">Paddy Rice</option>
                     </select>
                   </div>
 
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1">Dispute Details</label>
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1">Dispute Details</label>
                     <textarea
-                      class="form-control"
+                      className="form-control"
                       id=""
                       rows="3"
                       placeholder=""

@@ -10,7 +10,7 @@ export const NewOrderModal = ({ handleSendMsg }) => {
     <div
       className="modal fade place-order-modal"
       id="orderModal"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >

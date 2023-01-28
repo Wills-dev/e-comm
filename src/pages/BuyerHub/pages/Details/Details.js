@@ -199,11 +199,11 @@ const Details = () => {
                       {productImages &&
                         productImages.slice(0, 5).map((image, index) => (
                           <div
+                            key={index}
                             className="pt-box"
                             onClick={() => displayImageHandler(index)}
                           >
                             <img
-                              key={index}
                               src={image.image}
                               alt=""
                               style={{
@@ -253,7 +253,7 @@ const Details = () => {
                         See full Specification
                       </a>
                     </h3>
-                    <table class="table table-striped">
+                    <table className="table table-striped">
                       <tbody>
                         <tr>
                           <td className="mps-title">
@@ -324,13 +324,8 @@ const Details = () => {
                   <h3 className="m-product-spec-title2 mb-1">
                     Product Specification
                   </h3>
-                  <table class="table table-striped">
+                  <table className="table table-striped">
                     <tbody>
-                      {/* <tr>
-                        <td className="mps-title">Category:</td>
-                        <td>{productInfo.category}</td>
-                      </tr> */}
-
                       {productInfo.productSpecification &&
                         Object.entries(productInfo.productSpecification)
                           .slice(1, productInfo.productSpecification.length)
@@ -410,12 +405,12 @@ const Details = () => {
                     <div className="col-lg-8">
                       <div className="inq-form-wrap">
                         <form onSubmit={handleInquirySubmit}>
-                          <div class="mb-3">
-                            <label for="exampleInputEmail1">
+                          <div className="mb-3">
+                            <label htmlFor="exampleInputEmail1">
                               Product Requirements
                             </label>
                             <textarea
-                              class="form-control"
+                              className="form-control"
                               id=""
                               rows="3"
                               placeholder="Enter product requirements"
@@ -428,7 +423,7 @@ const Details = () => {
 
                           <div className="row">
                             <div className="col-lg-6 mb-3">
-                              <label for="exampleInputPassword1">
+                              <label htmlFor="exampleInputPassword1">
                                 Quantity
                               </label>
                               <div className="custom-input form-control">
@@ -452,7 +447,7 @@ const Details = () => {
                               </div>
                             </div>
                             <div className="col-lg-6 mb-3">
-                              <label for="exampleInputPassword1">
+                              <label htmlFor="exampleInputPassword1">
                                 Shipping Terms
                               </label>
                               <select
@@ -462,7 +457,9 @@ const Details = () => {
                                 value={inquiry.termsOfTrade}
                                 onChange={handleChange}
                               >
-                                <option selected>Select shipping terms</option>
+                                <option defaultValue="selected">
+                                  Select shipping terms
+                                </option>
                                 <option value="FOB">FOB</option>
                                 <option value="CIF">CIF</option>
                                 <option value="CFR">CFR</option>
@@ -473,7 +470,7 @@ const Details = () => {
 
                           <div className="row">
                             <div className="col-lg-6 mb-3">
-                              <label for="exampleInputPassword1">
+                              <label htmlFor="exampleInputPassword1">
                                 Payment Terms
                               </label>
                               <select
@@ -483,7 +480,9 @@ const Details = () => {
                                 value={inquiry.paymentTerms}
                                 onChange={handleChange}
                               >
-                                <option selected>Select payment terms</option>
+                                <option defaultValue="selected">
+                                  Select payment terms
+                                </option>
                                 <option value="LC">Letter of Credit</option>
                                 <option value="CAD">
                                   Cash Against Delivery
@@ -495,7 +494,7 @@ const Details = () => {
                               </select>
                             </div>
                             <div className="col-lg-6 mb-3">
-                              <label for="exampleInputPassword1">
+                              <label htmlFor="exampleInputPassword1">
                                 Destination Country
                               </label>
 

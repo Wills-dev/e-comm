@@ -15,7 +15,7 @@ const TrendingProduct = ({ sectionTitle }) => {
         setProduct(response.data.data);
       });
     } catch (error) {
-      console.log("error loading products", error.response.data.erros);
+      console.log(error);
     }
   };
 
@@ -114,15 +114,6 @@ const TrendingProduct = ({ sectionTitle }) => {
                   );
                 })}
           </div>
-
-          {/* <div class="gooey">
-              <span class="dot"></span>
-              <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div> */}
         </div>
       </div>
     </section>

@@ -45,7 +45,6 @@ const BuyerHome = () => {
     try {
       axios.get("/product").then((response) => {
         setProduct(response.data.data);
-        console.log("response", response);
         setLoading(false);
       });
     } catch (error) {
@@ -313,7 +312,7 @@ const BuyerHome = () => {
       <div
         className="modal fade place-order-modal"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
@@ -334,11 +333,11 @@ const BuyerHome = () => {
               <div className="row">
                 <div className="col-lg-12">
                   <form className="w-100" onSubmit={handleInquirySubmit}>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1">Product Name</label>
+                    <div className="mb-3">
+                      <label htmlFor="exampleInputEmail1">Product Name</label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         id=""
                         placeholder="Enter Product Name"
                         name="productName"
@@ -348,12 +347,12 @@ const BuyerHome = () => {
                       />
                     </div>
 
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1">
+                    <div className="mb-3">
+                      <label htmlFor="exampleInputEmail1">
                         Product Requirements
                       </label>
                       <textarea
-                        class="form-control"
+                        className="form-control"
                         id=""
                         rows="3"
                         placeholder="Enter product requirements"
@@ -366,7 +365,7 @@ const BuyerHome = () => {
 
                     <div className="row">
                       <div className="col-lg-6 mb-3">
-                        <label for="exampleInputPassword1">Quantity</label>
+                        <label htmlFor="exampleInputPassword1">Quantity</label>
                         <div className="custom-input form-control">
                           <div className="row">
                             <div className="col-lg-7 col">
@@ -388,7 +387,7 @@ const BuyerHome = () => {
                         </div>
                       </div>
                       <div className="col-lg-6 mb-3">
-                        <label for="exampleInputPassword1">
+                        <label htmlFor="exampleInputPassword1">
                           Shipping Terms
                         </label>
                         <select
@@ -398,7 +397,9 @@ const BuyerHome = () => {
                           value={inquiry.termsOfTrade}
                           onChange={handleChange}
                         >
-                          <option selected>Select shipping terms</option>
+                          <option defaultValue="selected">
+                            Select shipping terms
+                          </option>
                           <option value="FOB">FOB</option>
                           <option value="CIF">CIF</option>
                           <option value="CFR">CFR</option>
@@ -409,7 +410,9 @@ const BuyerHome = () => {
 
                     <div className="row">
                       <div className="col-lg-6 mb-3">
-                        <label for="exampleInputPassword1">Payment Terms</label>
+                        <label htmlFor="exampleInputPassword1">
+                          Payment Terms
+                        </label>
                         <select
                           className="form-select"
                           aria-label="Default select example"
@@ -417,7 +420,9 @@ const BuyerHome = () => {
                           value={inquiry.paymentTerms}
                           onChange={handleChange}
                         >
-                          <option selected>Select payment terms</option>
+                          <option defaultValue="selected">
+                            Select payment terms
+                          </option>
                           <option value="LC">LC</option>
                           <option value="DP">DP</option>
                           <option value="CAD">CAD</option>
@@ -425,7 +430,7 @@ const BuyerHome = () => {
                         </select>
                       </div>
                       <div className="col-lg-6 mb-3">
-                        <label for="exampleInputPassword1">
+                        <label htmlFor="exampleInputPassword1">
                           Destination Country
                         </label>
                         <Select
@@ -460,39 +465,7 @@ const BuyerHome = () => {
       {/* Trending Products */}
       <TrendingProduct sectionTitle="Newly Added Products" />
       {/* Newsletter Space */}
-      {/* <section id="ad-space">
-        <div className="container">
-          <div className="e-newsletter">
-            <div className="d-flex align-items-center">
-              <div className="flex-grow-1">
-                <h2>Never miss an important update</h2>
-                <p>
-                  Subscribe to get latest information and best deals directly
-                </p>
-              </div>
-              <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter Name"
-                  />
-                </div>
-                <div class="col-auto">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter E-mail Address"
-                  />
-                </div>
-                <div class="col-auto">
-                  <button>Subscribe</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+
       <Footer />
     </div>
   );

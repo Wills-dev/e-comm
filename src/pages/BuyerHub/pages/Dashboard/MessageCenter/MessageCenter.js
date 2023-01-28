@@ -275,12 +275,12 @@ const MessageCenter = () => {
                     <div className="message-area">
                       {messages.map((message, index) => {
                         return (
-                          <div className="message-area">
+                          <div className="message-area" key={index}>
                             {isMsgObject(message.message) ? (
                               // <ChatOrder order={JSON.parse(message.message)} />
                               <div className="chat-order-request-msg receiver">
-                                <div class="order-msg d-flex">
-                                  <div class="flex-shrink-0">
+                                <div className="order-msg d-flex">
+                                  <div className="flex-shrink-0">
                                     <h2>New Order</h2>
                                     <p className="cp-name">
                                       Order{" "}
@@ -347,7 +347,7 @@ const MessageCenter = () => {
                               >
                                 <div>
                                   {message.message === "START_NEW_ORDER" ? (
-                                    <div class="order-msg">
+                                    <div className="order-msg">
                                       <h2>Start Order</h2>
                                     </div>
                                   ) : (

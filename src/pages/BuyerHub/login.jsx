@@ -6,7 +6,7 @@ import "../BuyerHub/BuyerMain.css";
 import { axios } from "../../components/baseUrl";
 // import Icon, { EyeOutlined } from "@ant-design/icons";
 // import { Button, Modal } from "antd";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 import { Iconly } from "react-iconly";
 import { GlobalContext } from "../../components/utils/GlobalState";
 import { ReactNotifications } from "react-notifications-component";

@@ -95,7 +95,7 @@ export default function ForgotPassword() {
               </button>
             </div>
             <div className="col-lg-6 col-9 return-to" id="header-text">
-              <Link href="/login" style={{ color: "rgb(201, 79, 5)" }}>
+              <Link to="/login" style={{ color: "rgb(201, 79, 5)" }}>
                 Return to login
               </Link>
             </div>

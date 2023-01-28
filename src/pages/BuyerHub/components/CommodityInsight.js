@@ -7,9 +7,7 @@ const Capitalize = (str) => {
 
 const CommodityInsight = ({ productInfo }) => {
   const [commodityId, setCommodityId] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
 
-  console.log("productInfo", productInfo);
   const addClassToPath = (country) => {
     const filteredCountry = productInfo.CountryTraded
       ? productInfo.CountryTraded.filter(
@@ -28,7 +26,6 @@ const CommodityInsight = ({ productInfo }) => {
     try {
       const { data } = await axios.get(`/commodity`);
       setCommodityId(data.data);
-      console.log("commodity insight", data.data);
     } catch (error) {}
   };
 
@@ -56,6 +53,7 @@ const CommodityInsight = ({ productInfo }) => {
                   <div className="col-lg-7 data">
                     {filteredCommodityId.map((commodityInsight, index) => (
                       <div
+                        key={index}
                         className="briefHistory"
                         dangerouslySetInnerHTML={{
                           __html: commodityInsight.briefHistory
