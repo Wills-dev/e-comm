@@ -6,7 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import "../BuyerMain.css";
 import { axios } from "../../../components/baseUrl";
 
-import "antd/dist/antd.css";
 import { Iconly } from "react-iconly";
 import { ReactNotifications } from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
